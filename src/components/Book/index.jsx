@@ -6,22 +6,18 @@ const Book = (props) => {
   const { book } = props;
 
   //had to use the one from the file
-  const [isFav, setFavorite] = useState(book.isFav);
-  const [read, setRead] = useState(book.read);
+  const [isFav, setFavorite] = useState(false);
+  const [read, setRead] = useState(false);
 
   const handleSetRead = () => {
-    book.read = !book.read;
+    book.read = !read;
     setRead(book.read);
   };
 
   const handleSetFavorite = () => {
-    book.isFav = !book.isFav;
+    book.isFav = !isFav;
     setFavorite(book.isFav);
   };
-
-  // const handleSetFavorite = () => {
-  //   book.isFav? setFavorite(!book.isFav) : setFavorite(book.isFav);
-  // };
 
   return (
     <div className="Book">

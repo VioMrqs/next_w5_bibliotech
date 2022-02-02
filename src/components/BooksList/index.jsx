@@ -2,7 +2,7 @@ import { useState } from "react";
 import Book from "../Book";
 import Button from "../Button";
 
-const BooksList = ( {data} ) => {
+const BooksList = ({ data }) => {
   const [filterFav, setFilterFav] = useState(false);
   const [filterRead, setFilterRead] = useState(false);
 
