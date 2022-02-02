@@ -1,10 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useState } from "react";
 import BooksList from "./components/BooksList";
 import * as data from "./book.json";
 import './style.scss';
 
-const App = () => <BooksList data={data} />;
+const App = () => {
+
+return (
+  <div>
+    <BooksList data={data} />
+  </div>
+);
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

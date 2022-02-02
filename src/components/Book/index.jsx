@@ -1,30 +1,36 @@
 import { useState } from "react";
 import { FaHeart, FaPlusCircle } from "react-icons/fa";
 
-const Book = ({ title, thumbnailUrl, shortDescription }) => {
+const Book = (props) => {
+  const { book } = props;
 
-const [favorite, setFavorite] = useState(false);
-const [wish, setWish] = useState(false);
+  const [isFav, setFavorite] = useState(book.isFav);
+  const [read, setRead] = useState(book.read);
 
-const handleSetWish = () => {
-  (wish === true)? setWish(false) : setWish(true);
-}
+  const handleSetWish = () => {
+      book.read = !book.read;
+      setRead(book.read);  
+    };
 
-const handleSetFavorite = () => {
-  favorite === true ? setFavorite(false) : setFavorite(true);
-};
+  const handleSetFavorite = () => {
+      book.isFav = !book.isFav;
+      setFavorite(book.isFav);    
+    };
 
   return (
     <div className="Book">
-      <h3>{title}</h3>
-      <img src={thumbnailUrl} alt="lecture"></img>
-      <p className="BookDescription">{shortDescription}</p>
+      <h3>{book.title}</h3>
+      <h3>{book.isFav}</h3>
+      <h3>{book.read ? "coucou" : "pas coucou"}</h3>
+
+      <img src={book.thumbnailUrl} alt="lecture"></img>
+      <p className="BookDescription">{book.shortDescription}</p>
       <button onClick={handleSetFavorite}>
-        {favorite ? "Je dé-favorise " : "Je favorise "}
+        {book.isFav ? "Je dé-favorise " : "Je favorise "}
         <FaHeart />
       </button>
       <button onClick={handleSetWish}>
-        {wish ? "Je ne souhaite plus " : "Je souhaite "}
+        {book.read ? "Je ne souhaite plus " : "Je souhaite "}
         <FaPlusCircle />
       </button>
     </div>
