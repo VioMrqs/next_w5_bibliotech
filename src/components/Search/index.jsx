@@ -18,6 +18,7 @@ const Search = ({data}) => {
         placeholder="Dans ma bibliotech il y a..."
         onChange={handleChange}
       />
+      {console.log(filteredData)}
       <BooksList data={filteredData} />
     </div>
   );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Book from "../Book";
 import Button from "../Button";
 
-const BooksList = ( data ) => {
+const BooksList = ( {data} ) => {
   const [filterFav, setFilterFav] = useState(false);
   const [filterRead, setFilterRead] = useState(false);
 
@@ -15,10 +15,7 @@ const BooksList = ( data ) => {
   };
 
   const defineBookList = () => {
-//Probleme est ici
-// modification sur data : pertinente ?
-console.log(data)
-    let booksList = data.books[0];
+    let booksList = data;
     if (filterFav === true && filterRead === true) {
       return (booksList = booksList.filter(
         (e) => e.isFav === true && e.read === true
