@@ -2,7 +2,7 @@ import { useState } from "react";
 import Book from "../Book";
 import Button from "../Button";
 
-const BooksList = ({ data }) => {
+const BooksList = ( data ) => {
   const [filterFav, setFilterFav] = useState(false);
   const [filterRead, setFilterRead] = useState(false);
 
@@ -15,6 +15,9 @@ const BooksList = ({ data }) => {
   };
 
   const defineBookList = () => {
+//Probleme est ici
+// modification sur data : pertinente ?
+console.log(data)
     let booksList = data.books[0];
     if (filterFav === true && filterRead === true) {
       return (booksList = booksList.filter(
@@ -49,22 +52,3 @@ const BooksList = ({ data }) => {
 };
 
 export default BooksList;
-
-// {
-//   () => {
-//     if (filterFav === true) {
-//       return booksList
-//         .filter((e) => e.isFav === true)
-//         .map((book) => <Book book={book} />);
-//     } else if (filterRead === true) {
-//       return booksList
-//         .filter((e) => e.read === true)
-//         .map((book) => <Book book={book} />);
-//     } else if (filterRead === true && filterFav === true) {
-//       return booksList
-//         .filter((e) => e.isFav === true && e.read === true)
-//         .map((book) => <Book book={book} />);
-//     }
-//     return booksList.map((book) => <Book book={book} />);
-//   };
-// }

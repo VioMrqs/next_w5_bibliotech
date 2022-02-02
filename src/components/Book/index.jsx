@@ -5,6 +5,7 @@ import Button from "../Button";
 const Book = (props) => {
   const { book } = props;
 
+  //had to use the one from the file
   const [isFav, setFavorite] = useState(book.isFav);
   const [read, setRead] = useState(book.read);
 

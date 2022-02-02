@@ -1,13 +1,26 @@
-// Une barre de recherche est disponible, et les utilisateurs peuvent chercher un ou plusieurs livres en fonction de leur titre. Il y aura également 2 boutons, un permettant de filtrer les livres favoris, et un permettant de filtrer les livres que l'utilisateur souhaite lire.
-
 import { useState } from "react";
+import BooksList from '../BooksList'
 
-const Search = () => {
+const Search = ({data}) => {
+  
+  const [searchField, setSearchField] = useState("");
 
-  // return function SearchList({ filteredPersons }) {
-  //   const filtered = filteredPersons.map((person) => (
-  //     <Card key={person.id} person={person} />
-  //   ));
-  //   return <div>{filtered}</div>;
-  // };
+  const filteredData = data.books[0].filter((book) => book.title.toLowerCase().includes(searchField.toLowerCase()));
+
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  return (
+    <div className="Search">
+      <input
+        type="search"
+        placeholder="Dans ma bibliotech il y a..."
+        onChange={handleChange}
+      />
+      <BooksList data={filteredData} />
+    </div>
+  );
 }
+
+export default Search;
