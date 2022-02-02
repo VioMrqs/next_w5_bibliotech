@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap");
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #e8d6cb;
+}
+
+.BookGrid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Book {
+  border-style: solid;
+  border-width: 0, 5rem;
+  border-radius: 10px;
+  border-color: #5d2e46;
+  width: 300px;
+  text-align: center;
+  margin: 5px;
+}
+
+.BookDescription {
+  border-style: solid;
+  border-width: 0, 2rem;
+  padding: 10px;
+  margin: 5px;
+  border-color: #ad6a6c;
+}
