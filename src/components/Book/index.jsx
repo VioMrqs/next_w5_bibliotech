@@ -9,14 +9,18 @@ const Book = (props) => {
   const [read, setRead] = useState(book.read);
 
   const handleSetRead = () => {
-      book.read = !book.read;
-      setRead(book.read);  
-    };
+    book.read = !book.read;
+    setRead(book.read);
+  };
 
   const handleSetFavorite = () => {
-      book.isFav = !book.isFav;
-      setFavorite(book.isFav);    
-    };
+    book.isFav = !book.isFav;
+    setFavorite(book.isFav);
+  };
+
+  // const handleSetFavorite = () => {
+  //   book.isFav? setFavorite(!book.isFav) : setFavorite(book.isFav);
+  // };
 
   return (
     <div className="Book">
