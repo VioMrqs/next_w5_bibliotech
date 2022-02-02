@@ -5,6 +5,12 @@ body {
   background-color: #e8d6cb;
 }
 
+h1{
+  font-size: 40px;
+  font-weight: 600;
+  color: #5d2e46;
+}
+
 .Container {
   text-align: center;
 }
@@ -48,5 +54,15 @@ body {
 }
 
 .Search {
-  
+  text-align: center;
 }
+
+.SearchInput {
+  background-color: #023047;
+  color: #ffcdb2; 
+  padding: 6px;
+  margin: 16px;
+  font-size: 20px;
+  width: 200px;
+}
+

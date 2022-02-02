@@ -14,11 +14,11 @@ const Search = ({data}) => {
   return (
     <div className="Search">
       <input
+        className="SearchInput"
         type="search"
-        placeholder="Dans ma bibliotech il y a..."
+        placeholder="Rechercher..."
         onChange={handleChange}
       />
-      {console.log(filteredData)}
       <BooksList data={filteredData} />
     </div>
   );
