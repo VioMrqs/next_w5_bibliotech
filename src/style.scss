@@ -5,8 +5,11 @@ body {
   background-color: #e8d6cb;
 }
 
+.Container {
+  text-align: center;
+}
 .Librairie {
-    text-align: center;
+  text-align: center;
 }
 
 .BookGrid {
@@ -28,9 +31,18 @@ body {
 }
 
 .BookDescription {
-  border-style: solid;
-  border-width: 0, 2rem;
   padding: 10px;
   margin: 5px;
-  border-color: #ad6a6c;
+}
+
+.Button {
+  background-color: #023047;
+  border: none;
+  color: #ffcdb2;
+  padding: 15px 32px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

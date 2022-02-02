@@ -7,7 +7,8 @@ import './style.scss';
 const App = () => {
 
 return (
-  <div>
+  <div className="Container">
+    <h1>Biblio-Tech</h1>
     <BooksList data={data} />
   </div>
 );
