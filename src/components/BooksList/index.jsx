@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Book from "../Book";
+import Button from "../Button";
 
 const BooksList = ({ data }) => {
   const [filterFav, setFilterFav] = useState(false);
@@ -29,12 +30,14 @@ const BooksList = ({ data }) => {
 
   return (
     <div className="Librairie">
-      <button onClick={handleSetFilterFav}>
-        {filterFav ? "Tous les livres" : "Mes favoris"}
-      </button>
-      <button onClick={handleSetFilterRead}>
-        {filterRead ? "Tous les livres" : "Mes souhaits"}
-      </button>
+      <Button
+        onClick={handleSetFilterFav}
+        text={filterFav ? "Tous les livres" : "Mes favoris"}
+      />
+      <Button
+        onClick={handleSetFilterRead}
+        text={filterRead ? "Tous les livres" : "Mes souhaits"}
+      />
       <div className="BookGrid">
         {defineBookList().map((book) => (
           <Book book={book} />
