@@ -14,6 +14,8 @@ const BooksList = ({ data }) => {
     filterRead === true ? setFilterRead(false) : setFilterRead(true);
   };
 
+// useEffect
+
   const defineBookList = () => {
     let booksList = data;
     if (filterFav === true && filterRead === true) {
@@ -38,6 +40,11 @@ const BooksList = ({ data }) => {
         onClick={handleSetFilterRead}
         text={filterRead ? "Tous les livres" : "Mes souhaits"}
       />
+      <div>
+        {defineBookList().length === 0
+          ? "Pas d'élus - retente ta chance"
+          : defineBookList().length + " élus"}
+      </div>
       <div className="BookGrid">
         {defineBookList().map((book) => (
           <Book book={book} />
