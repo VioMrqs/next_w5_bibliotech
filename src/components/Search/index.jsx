@@ -20,6 +20,9 @@ const Search = ({ data }) => {
         placeholder="Rechercher..."
         onChange={handleChange}
       />
+      {filteredData.length === 0
+        ? "Pas d'élus - retente ta chance"
+        : filteredData.length + " élus"}
       <BooksList data={filteredData} />
     </div>
   );
